@@ -1,0 +1,230 @@
+@use 'mixinsfunc';
+
+
+.banner {
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, #00FFFF 0%, #00AFFF 64.84%);
+
+    &__nubes {
+        width: 70%;
+        position: absolute;
+        top: -200px;
+        z-index: 0;
+        @include mixinsfunc.anim;
+    }
+
+    &__nubes2 {
+        width: 30%;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        @include mixinsfunc.anim;
+    }
+
+    @media (max-width: 767px) {
+        &__nubes {
+            top: 80px;
+        }
+
+        &__nubes2 {
+            top: 70px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        &__nubes {
+            top: 100px;
+        }
+
+        &__nubes2 {
+            top: 200px;
+        }
+    }
+
+    &__hit-logo {
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        top: 30px;
+        left: 40px;
+        z-index: 600;
+
+        @media (max-width: 767px) {
+            & {
+                width: 120px;
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 200;
+    }
+
+    &__title-cont {
+        position: relative;
+        width: 100%;
+        padding-top: 50px;
+        z-index: 400;
+        @include mixinsfunc.center(center);
+
+        &_img {
+            width: 550px;
+        }
+
+        @media (max-width: 767px) {
+            & {
+                padding-top: 200px;
+            }
+
+            &_img {
+                width: 350px;
+            }
+        }
+    }
+
+    &__sello {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        padding-right: 20%;
+        z-index: 300;
+        @include mixinsfunc.center(end);
+
+        &--img {
+            width: 220px;
+        }
+
+        &--girl {
+            width: 100px;
+            display: none;
+        }
+
+        &--boy {
+            width: 80px;
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+
+            & {
+                height: auto;
+                justify-content: center;
+                padding: 0;
+                top: 300px;
+            }
+
+            &--img {
+                width: 150px;
+            }
+
+            &--girl {
+                display: block;
+            }
+
+            &--boy {
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            & {
+                height: auto;
+                justify-content: center;
+                padding: 0;
+            }
+
+            &--img {
+                width: 150px;
+            }
+        }
+    }
+
+    &__jugos {
+        position: absolute;
+        width: 100%;
+        height: 400px;
+        z-index: 210;
+        bottom: 120px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        &--juice {
+            &_img {
+                width: 750px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            &--juice {
+                &_img {
+                    width: 600px;
+
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            &--girl {
+                display: none;
+            }
+
+            &--boy {
+                display: none;
+            }
+
+            &--juice {
+                &_img {
+                    width: 350px;
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+
+    &__btn-cat {
+        position: absolute;
+        bottom: 65px;
+        z-index: 400;
+        width: 100%;
+        height: 100px;
+        @include mixinsfunc.center(space-evenly);
+
+        &_left {
+            @include mixinsfunc.btn;
+            width: 250px;
+        }
+
+        &_cat {
+            width: 110px;
+        }
+
+        &_right {
+            @include mixinsfunc.btn;
+            width: 270px;
+        }
+
+        @media (max-width: 767px) {
+            & {
+                bottom: 0px;
+            }
+
+            &_left {
+                width: 140px;
+            }
+
+            &_cat {
+                width: 70px;
+            }
+
+            &_right {
+                width: 140px;
+            }
+        }
+    }
+}

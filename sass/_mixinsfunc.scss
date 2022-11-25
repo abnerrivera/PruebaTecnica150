@@ -1,0 +1,49 @@
+@use 'sass:math';
+
+@mixin center($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin anim {
+    animation: movimiento 2.5s linear infinite;
+
+    @keyframes movimiento {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(30px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin expand {
+    position: relative;
+    width: 200px;
+    min-width: 200px;
+    height: 477px;
+    background-color: #FFBC00;
+    transition: width 0.5s ease-in-out;
+    border-radius: 30px;
+}
+
+@mixin btn {
+    cursor: pointer;
+    transition: transform .2s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+@function px-rem($pixeles) {
+    $rem: math.div($pixeles, 16) * 1rem;
+    @return $rem;
+}

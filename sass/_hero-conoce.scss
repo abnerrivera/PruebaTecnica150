@@ -1,0 +1,468 @@
+@use 'mixinsfunc';
+
+
+
+.bannerConoce {
+    width: 100%;
+    background: linear-gradient(0deg, #00FFFF 0%, #00AFFF 64.84%);
+    height: 100vh;
+
+    @include mixinsfunc.center(center);
+
+    &__nubes {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include mixinsfunc.anim;
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            & {
+                top: 100px;
+                width: 800px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            & {
+                width: 500px;
+            }
+        }
+    }
+
+    &__bg {
+        width: 105.7%;
+        position: absolute;
+        left: -110px;
+        bottom: -40px;
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            & {
+                width: 109%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            & {
+                width: 127.5%;
+                bottom: -180px;
+            }
+        }
+
+
+    }
+
+    &__txt-btn {
+        position: absolute;
+        top: 50px;
+        width: 75%;
+        height: 250px;
+        @include mixinsfunc.center(space-between);
+        flex-wrap: wrap;
+
+        &_txt {
+            color: white;
+            font-family: 'Amsi';
+            text-transform: uppercase;
+
+            font-size: mixinsfunc.px-rem(80);
+        }
+
+        &_img {
+            width: 300px;
+            @include mixinsfunc.btn;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+
+            & {
+                width: 60%;
+            }
+
+            &_txt {
+                font-size: mixinsfunc.px-rem(50);
+            }
+
+            &_img {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            & {
+                width: 60%;
+                top: 200px;
+            }
+
+            &_txt {
+                font-size: mixinsfunc.px-rem(50);
+            }
+
+            &_img {
+                width: 200px;
+                @include mixinsfunc.btn;
+            }
+        }
+    }
+
+    &__cards {
+        position: absolute;
+        top: 300px;
+        width: 100%;
+        height: 450px;
+
+
+        @include mixinsfunc.center(center);
+
+        &--cont {
+            width: 80%;
+            height: 500px;
+            @include mixinsfunc.center(center);
+            gap: 20px;
+            overflow: auto;
+            flex-wrap: wrap;
+
+            &-1 {
+                @include mixinsfunc.expand;
+
+                .bannerConoce__cards--cont-1_title {
+                    opacity: 0;
+                    position: absolute;
+                    left: 300px;
+                    top: 50px;
+                    font-family: 'Amsi';
+                    font-size: mixinsfunc.px-rem(50);
+                    color: white;
+                    transition: opacity 0.2s ease;
+                }
+
+                .bannerConoce__cards--cont-1_txt {
+                    opacity: 0;
+                    margin-top: 50px;
+                    position: absolute;
+                    width: 250px;
+                    left: 250px;
+                    font-family: 'Galano';
+                    top: 100px;
+                    font-size: mixinsfunc.px-rem(18);
+                    color: white;
+                    transition: opacity 0.2s ease;
+                }
+
+                &:hover {
+                    width: 560px;
+                    background-color: #E85E2D;
+
+                    .bannerConoce__cards--cont-1_title {
+                        opacity: 1;
+                    }
+
+                    .bannerConoce__cards--cont-1_txt {
+                        opacity: 1;
+                    }
+                }
+
+                &_img {
+                    position: absolute;
+                    bottom: -20px;
+                }
+            }
+
+            &-2 {
+                @include mixinsfunc.expand;
+
+                .bannerConoce__cards--cont-2_title {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    position: absolute;
+                    left: 300px;
+                    top: 50px;
+                    font-family: 'Amsi';
+                    font-size: mixinsfunc.px-rem(50);
+                    color: white;
+                }
+
+                .bannerConoce__cards--cont-2_txt {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    margin-top: 50px;
+                    position: absolute;
+                    width: 250px;
+                    left: 250px;
+                    font-family: 'Galano';
+                    top: 100px;
+                    font-size: mixinsfunc.px-rem(18);
+                    color: white;
+                }
+
+                &:hover {
+                    width: 550px;
+                    background-color: #E85E2D;
+
+                    .bannerConoce__cards--cont-2_title {
+                        opacity: 1;
+                    }
+
+                    .bannerConoce__cards--cont-2_txt {
+                        opacity: 1;
+                    }
+                }
+
+                &_img {
+                    position: absolute;
+                    bottom: 0px;
+                }
+            }
+
+            &-3 {
+                @include mixinsfunc.expand;
+
+                .bannerConoce__cards--cont-3_title {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    position: absolute;
+                    left: 300px;
+                    top: 50px;
+                    font-family: 'Amsi';
+                    font-size: mixinsfunc.px-rem(50);
+                    color: white;
+                }
+
+                .bannerConoce__cards--cont-3_txt {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    margin-top: 50px;
+                    position: absolute;
+                    width: 250px;
+                    left: 250px;
+                    font-family: 'Galano';
+                    top: 100px;
+                    font-size: mixinsfunc.px-rem(18);
+                    color: white;
+                }
+
+                &:hover {
+                    width: 550px;
+                    background-color: #E85E2D;
+
+                    .bannerConoce__cards--cont-3_title {
+                        opacity: 1;
+                    }
+
+                    .bannerConoce__cards--cont-3_txt {
+                        opacity: 1;
+                    }
+                }
+
+                &_img {
+                    position: absolute;
+                    bottom: 0px;
+                    left: -80px;
+                }
+            }
+
+            &-4 {
+                @include mixinsfunc.expand;
+
+                .bannerConoce__cards--cont-4_title {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    position: absolute;
+                    left: 300px;
+                    top: 50px;
+                    font-family: 'Amsi';
+                    font-size: mixinsfunc.px-rem(50);
+                    color: white;
+                }
+
+                .bannerConoce__cards--cont-4_txt {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    margin-top: 50px;
+                    position: absolute;
+                    width: 250px;
+                    left: 250px;
+                    font-family: 'Galano';
+                    top: 100px;
+                    font-size: mixinsfunc.px-rem(18);
+                    color: white;
+                }
+
+                &:hover {
+                    width: 550px;
+                    background-color: #E85E2D;
+
+                    .bannerConoce__cards--cont-4_title {
+                        opacity: 1;
+                    }
+
+                    .bannerConoce__cards--cont-4_txt {
+                        opacity: 1;
+                    }
+                }
+
+                &_img {
+                    position: absolute;
+                    bottom: 0px;
+                }
+            }
+
+            &-5 {
+                @include mixinsfunc.expand;
+
+                .bannerConoce__cards--cont-5_title {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    position: absolute;
+                    left: 300px;
+                    top: 50px;
+                    font-family: 'Amsi';
+                    font-size: mixinsfunc.px-rem(50);
+                    color: white;
+                }
+
+                .bannerConoce__cards--cont-5_txt {
+                    opacity: 0;
+                    transition: opacity .6s;
+                    margin-top: 50px;
+                    position: absolute;
+                    width: 250px;
+                    left: 250px;
+                    font-family: 'Galano';
+                    top: 100px;
+                    font-size: mixinsfunc.px-rem(18);
+                    color: white;
+                }
+
+                &:hover {
+                    width: 550px;
+                    background-color: #E85E2D;
+
+                    .bannerConoce__cards--cont-5_title {
+                        opacity: 1;
+                    }
+
+                    .bannerConoce__cards--cont-5_txt {
+                        opacity: 1;
+                    }
+                }
+
+                &_img {
+                    position: absolute;
+                    bottom: 0px;
+                }
+            }
+
+            @media (max-width: 767px) {
+                &-1 {
+                    &:hover {
+                        .bannerConoce__cards--cont-1_img {
+                            display: none;
+                        }
+
+                        .bannerConoce__cards--cont-1_title {
+                            left: 100px;
+                        }
+
+                        .bannerConoce__cards--cont-1_txt {
+                            left: 40px;
+                        }
+                    }
+                }
+
+                &-2 {
+                    &:hover {
+                        .bannerConoce__cards--cont-2_img {
+                            display: none;
+                        }
+
+                        .bannerConoce__cards--cont-2_title {
+                            left: 100px;
+                        }
+
+                        .bannerConoce__cards--cont-2_txt {
+                            left: 40px;
+                        }
+                    }
+                }
+
+                &-3 {
+                    &:hover {
+                        .bannerConoce__cards--cont-3_img {
+                            display: none;
+                        }
+
+                        .bannerConoce__cards--cont-3_title {
+                            left: 100px;
+                        }
+
+                        .bannerConoce__cards--cont-3_txt {
+                            left: 40px;
+                        }
+                    }
+                }
+
+                &-4 {
+                    &:hover {
+                        .bannerConoce__cards--cont-4_img {
+                            display: none;
+                        }
+
+                        .bannerConoce__cards--cont-4_title {
+                            left: 100px;
+                        }
+
+                        .bannerConoce__cards--cont-4_txt {
+                            left: 40px;
+                        }
+                    }
+                }
+
+                &-5 {
+                    &:hover {
+                        .bannerConoce__cards--cont-5_img {
+                            display: none;
+                        }
+
+                        .bannerConoce__cards--cont-5_title {
+                            left: 100px;
+                        }
+
+                        .bannerConoce__cards--cont-5_txt {
+                            left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            & {
+                top: 400px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            & {
+                top: 500px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        & {
+            height: 120vh;
+        }
+    }
+}
+
+.wave {
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+    &__img {
+        width: 100%;
+        position: absolute;
+        top: -60px;
+    }
+}

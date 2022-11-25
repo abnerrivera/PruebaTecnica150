@@ -1,0 +1,73 @@
+@use 'mixinsfunc';
+
+.footer {
+    color: white;
+    width: 100%;
+    min-height: 330px;
+    background-color: #46A4DD;
+    @include mixinsfunc.center(center);
+
+
+    &__left {
+        width: 30%;
+        height: 300px;
+
+        &::after {
+            content: '';
+            height: 150px;
+            width: 2px;
+            background-color: #fff;
+            margin-left: 100px
+        }
+
+        @include mixinsfunc.center(center);
+
+        &--text-logo {
+            margin-left: 100px;
+            width: 300px;
+            flex-direction: column;
+            @include mixinsfunc.center(flex-start);
+
+            &_img {
+                width: 230px;
+            }
+
+            &_txt {
+                font-size: mixinsfunc.px-rem(15);
+                font-family: 'Galano';
+                line-height: 40px;
+                padding-left: 45px;
+            }
+        }
+    }
+
+    &__right {
+        width: 70%;
+        height: 300px;
+
+        @include mixinsfunc.center(flex-start);
+
+        &--cont {
+            margin-left: 100px;
+            padding-top: 55px;
+            width: 300px;
+            line-height: 50px;
+
+            &-social {
+                list-style: none;
+                display: flex;
+                gap: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        & {
+            flex-direction: column;
+
+            &__right--cont {
+                margin-left: 50px;
+            }
+        }
+    }
+}

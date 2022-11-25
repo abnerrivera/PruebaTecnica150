@@ -1,0 +1,534 @@
+@use 'mixinsfunc';
+@use 'variables';
+
+.mobile {
+    display: none;
+}
+
+.desc {
+    display: inline;
+}
+
+.slider {
+    position: relative;
+    z-index: 50px;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+
+    @include mixinsfunc.center(center);
+    flex-direction: column;
+    gap: 90px;
+
+    &__title {
+        font-family: 'Amsi';
+        text-transform: uppercase;
+        font-size: mixinsfunc.px-rem(70);
+        color: #46974E;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .swiper {
+        height: auto !important;
+    }
+
+    .slider__title {
+        font-size: mixinsfunc.px-rem(60);
+    }
+
+    .slider__cont--item_img {
+        width: 800px;
+    }
+
+    .swiper-slide {
+        height: auto !important;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .swiper {
+        height: auto !important;
+    }
+
+    .desc {
+        display: none;
+    }
+
+    .mobile {
+        display: inline;
+    }
+
+    .slider__cont--item_img-mobile {
+        width: 300px;
+    }
+
+    .slider__title {
+        font-size: mixinsfunc.px-rem(40);
+    }
+
+    .slider__cont--item_img {
+        width: 500px;
+    }
+
+    .swiper-slide {
+        height: 500px !important;
+    }
+}
+
+.doge {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 130px;
+
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    &__bg-mobile {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: none;
+    }
+
+    &__cont {
+        width: 100%;
+        padding-left: 100px;
+        position: absolute;
+        height: 400px;
+
+        &--doge {
+            position: absolute;
+            left: 0px;
+        }
+
+        &--play {
+            &_txt {
+                text-align: center;
+                position: absolute;
+                bottom: 42%;
+                left: 750px;
+                color: variables.$txtP;
+                font-weight: bold;
+                font-family: 'Galano';
+            }
+
+            &_btn {
+                position: absolute;
+                bottom: 20%;
+                left: 800px;
+                @include mixinsfunc.btn;
+            }
+        }
+
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+
+        & {
+            margin-top: 0;
+        }
+
+
+
+        &__cont {
+
+            &--doge {
+                width: 700px;
+                left: -150px;
+                bottom: -70px;
+            }
+
+            &--play {
+                &_txt {
+                    bottom: 130px;
+                    left: 350px;
+                }
+
+                &_btn {
+                    bottom: 50px;
+                    left: 400px;
+                }
+            }
+
+
+        }
+
+    }
+
+    @media (max-width: 767px) {
+        & {
+            margin-top: 200px;
+            height: 220px;
+        }
+
+        &__bg-mobile {
+            display: block;
+            width: 100%;
+            height: 327px;
+        }
+
+        &__bg {
+            display: none;
+        }
+
+        &__cont {
+
+            &--doge {
+                width: 400px;
+                left: -100px;
+                bottom: -70px;
+                top: -30px;
+            }
+
+            &--play {
+                &_txt {
+                    bottom: 363px;
+                    left: 115px;
+                    font-size: mixinsfunc.px-rem(16);
+                }
+
+                &_btn {
+                    bottom: 277px;
+                    left: 142px;
+                    width: 236px;
+                }
+            }
+
+
+        }
+    }
+
+}
+
+.text {
+    margin: auto;
+    padding-top: 100px;
+    width: 60%;
+    min-height: 300px;
+
+    &__txt {
+        font-size: mixinsfunc.px-rem(24);
+        font-family: 'Galano';
+        color: #15863F;
+        font-weight: 600;
+    }
+
+    @media (max-width: 767px) {
+        &__txt {
+            font-size: mixinsfunc.px-rem(18);
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        &__txt {
+            font-size: mixinsfunc.px-rem(20);
+        }
+    }
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, #00FFFF 0%, #00AFFF 64.84%);
+
+    &__nubes {
+        position: absolute;
+        bottom: 100px;
+        right: 10px;
+        @include mixinsfunc.anim
+    }
+
+    &__nubes2 {
+        position: absolute;
+        position: absolute;
+        bottom: -150px;
+        @include mixinsfunc.anim
+    }
+
+    &__desvanecido {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    &__title {
+        position: absolute;
+        color: #46974E;
+        z-index: 50;
+        left: 40%;
+        top: 50px;
+        font-size: mixinsfunc.px-rem(70);
+        font-family: 'Amsi';
+    }
+
+    &__video {
+        border-radius: 20px 120px;
+        width: 1119px;
+        height: 673px;
+        position: absolute;
+        left: 20%;
+        top: 30%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+
+        &__nubes {
+            bottom: 50px;
+        }
+
+        &__nubes2 {
+            bottom: -40px;
+        }
+
+        &__video {
+            width: 800px;
+            height: 400px;
+        }
+
+        &__title {
+            left: 25%;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        &__nubes {
+            width: 300px;
+            bottom: 0px;
+            top: 50px;
+        }
+
+        &__nubes2 {
+            width: 300px;
+            top: 210px;
+            bottom: -40px;
+        }
+
+        &__video {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px 30px;
+            left: 10%;
+        }
+
+        &__title {
+            left: 10%;
+            font-size: mixinsfunc.px-rem(50);
+        }
+    }
+
+}
+
+.jugosBg {
+    position: relative;
+    width: 100%;
+    height: 150vh;
+    background: linear-gradient(0deg, #00AFFF 0%, #00FFFF 64.84%);
+
+    &__nubes {
+        position: absolute;
+        bottom: 500px;
+        @include mixinsfunc.anim;
+    }
+
+    &__nubes2 {
+        position: absolute;
+        right: 700px;
+        @include mixinsfunc.anim;
+    }
+
+    &__bg {
+        position: absolute;
+        bottom: -190px;
+        width: 100%;
+    }
+
+    &__play {
+        position: absolute;
+        width: 400px;
+        top: 50px;
+        left: 40%;
+        @include mixinsfunc.btn;
+    }
+
+    &__jugos {
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+    }
+
+    &__alan {
+        position: absolute;
+        bottom: 0;
+        left: 45%;
+    }
+
+    &__guido {
+        position: absolute;
+        bottom: 600px;
+        left: 15%;
+    }
+
+    &__terminos {
+        width: 100%;
+        min-height: 41px;
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        bottom: 0;
+        padding: 20px 0px;
+        font-size: mixinsfunc.px-rem(12);
+        @include mixinsfunc.center(center);
+
+        &--txt {
+            color: white;
+            font-family: 'Amsi';
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        & {
+            height: 100vh;
+        }
+
+        &__bg {
+            bottom: -150px;
+        }
+
+        &__play {
+            top: -50px;
+            width: 300px;
+        }
+
+        &__jugos {
+            width: 400px;
+        }
+
+        &__alan {
+            left: 50%;
+        }
+
+        &__guido {
+            position: absolute;
+            bottom: 400px;
+            left: 10%;
+        }
+
+        &__nubes {
+            bottom: 630px;
+            right: 100px;
+        }
+
+        &__nubes2 {
+            right: 700px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        & {
+            height: 100vh;
+        }
+
+        &__play {
+            width: 300px;
+            left: 15%;
+            top: -30px;
+        }
+
+        &__bg {
+            bottom: -50px;
+        }
+
+        &__jugos {
+            width: 200px;
+            left: 50px;
+        }
+
+        &__alan {
+            width: 200px;
+            left: 40%;
+        }
+
+        &__guido {
+            width: 300px;
+            position: absolute;
+            bottom: 500px;
+            left: 5%;
+        }
+
+        &__nubes {
+            width: 300px;
+            bottom: 630px;
+            right: 0;
+        }
+
+
+        &__nubes2 {
+            width: 300px;
+            right: 100px;
+            bottom: 200px;
+        }
+
+    }
+}
+
+.footer-conoce {
+    width: 100%;
+    min-height: 300px;
+    background-color: #46A4DD;
+    @include mixinsfunc.center(space-evenly);
+    flex-wrap: wrap;
+
+    &__logo {
+        width: 400px;
+        height: 300px;
+        flex-wrap: wrap;
+        @include mixinsfunc.center(center);
+        flex-direction: column;
+
+        &--cont {
+            @include mixinsfunc.center(center)
+        }
+
+
+    }
+
+    &__txt {
+        width: 400px;
+        height: 300px;
+        margin: 0px 50px;
+        @include mixinsfunc.center(center);
+
+        &--text {
+            color: white;
+            font-family: 'Galano';
+            font-size: mixinsfunc.px-rem(20);
+            line-height: 40px;
+        }
+    }
+
+    &__social {
+        width: 400px;
+        height: 300px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px 50px;
+
+        &--text {
+            color: white;
+            font-size: mixinsfunc.px-rem(20);
+            font-family: 'Galano';
+            line-height: 40px;
+            margin-bottom: 20px;
+        }
+    }
+}
